@@ -29,15 +29,15 @@ module.exports = {
       `
     ]
   ],
-  //base: '/Blog-qi/',
+  //base: '/blog/',
   plugins: ['@vuepress/pwa'],
   plugins: pluginConf,
   themeConfig: { 
     lastUpdated: '最近更新时间', // string | boolean
-    repo: 'zhenguser/blog-qi',
+    // repo: 'zhenguser/blog',
     //repoLabel: '查看源码',
     logo: '/images/icon01.jpeg',
-   // docsDir: 'docs',
+    docsDir: 'docs',
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
     // 默认为 "Edit this page"
