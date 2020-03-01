@@ -1,6 +1,6 @@
 const utils = require('../../../utils/index.js');
-const children = ['','test'];
+const children = [''];
 
 module.exports = [
-    utils.genSidebar('About', children),
+    utils.genSidebar('关于', children),
 ] 

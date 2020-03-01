@@ -1,16 +1,21 @@
 <template>
     <div v-if="comment">
+        <h4></h4>
         <!-- id 将作为查询条件 -->
         <span :id="page.path" class="leancloud_visitors" :data-flag-title="page.title">
-            <em class="post-meta-item-text"><h4>文章评论：</h4> </em>
+            <em class="post-meta-item-text">阅读量：</em>
             <i class="leancloud-visitors-count">1000000</i>
         </span>
+        <h4>文章评论：</h4>
         <div id="vcomments"></div>
     </div>
 </template>
 
 <script>
 export default {
+    created: {
+
+    },
     computed:{
         comment: function() {
             let { comment = 'true' } = this.$frontmatter;
@@ -51,6 +56,3 @@ export default {
     }
 }
 </script>>
-
-
-    

@@ -13,16 +13,16 @@
       ariaLabel: '数据结构与算法 Menu',
       items: [
         { text: "设计模式", link: "/designPattern/" },
-        { text: "第三方框架", link: "/framework/" }, 
+        { text: "框架", link: "/framework/" }, 
         { text: '其他', link: '/structure/' }
       ]
     },
     { text: "算法", link: "/algorithm/" },
     { text: "网络", link: "/network/" },
-    { text: "数据库", link: "/database/"},
+    { text: "开发", link: "/development/"},
     { text: "更多",
       items: [
-        { text: 'Features', link: '/algorithm/' },
+        { text: '数据库', link: '/more/database/' },
         { text: '测试', link: '/more/test/' },
       ]
     }, 
