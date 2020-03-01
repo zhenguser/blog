@@ -37,6 +37,7 @@ module.exports = {
     // repo: 'zhenguser/blog',
     //repoLabel: '查看源码',
     logo: '/images/icon01.jpeg',
+    docsRepo: 'zhenguser/blog',
     docsDir: 'docs',
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
@@ -47,8 +48,9 @@ module.exports = {
     // sidebarDepth: 2,    // 可选的, 默认值是
     displayAllHeaders: true,// 默认值：false
     activeHeaderLinks: false, // 默认值：true
-    markdown: {
-      lineNumbers: true
-    }
-  } 
+    
+  },
+  markdown: {
+    lineNumbers: true
+  }
 } 
