@@ -1,5 +1,5 @@
 const utils = {
-    genSidebar: function (title, children = [''], collapable = false, sidebarDepth = 1) {
+    genSidebar: function (title, children = [''], collapable = true, sidebarDepth = 1) {
         return {
             title,
             collapable,

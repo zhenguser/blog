@@ -1,30 +1,10 @@
  module.exports = [
     { text: "首页", link: "/" },
-
-    { text: "前端", 
-      items: [
-        { text: 'JavaScript', link: '/structure/' },
-        { text: "Vue", link: "/designPattern/" }, 
-        { text: "Axious", link: "/framework/" }, 
-        { text: '其他', link: '/algorithm/' }
-      ]
-    }, 
-    { text: "Java", 
-      ariaLabel: '数据结构与算法 Menu',
-      items: [
-        { text: "设计模式", link: "/designPattern/" },
-        { text: "框架", link: "/framework/" }, 
-        { text: '其他', link: '/structure/' }
-      ]
-    },
+    { text: "前端", link: "/frontend/"}, 
+    { text: "Java", link: "/java/"},
     { text: "算法", link: "/algorithm/" },
     { text: "网络", link: "/network/" },
     { text: "开发", link: "/development/"},
-    { text: "更多",
-      items: [
-        { text: '数据库', link: '/more/database/' },
-        { text: '测试', link: '/more/test/' },
-      ]
-    }, 
+    { text: "更多", link: "/more/"}, 
     { text: "关于", link: "/about/" },
  ];

@@ -5,7 +5,7 @@ const sidebarConf = require('../../config/sidebarConf/index.js');
 
 module.exports = {
   title: 'ALL FOR ONE',
-  description: 'Java学习资料,Java笔记,Spring全家桶,Mysql',
+  description: 'zhengqi,Java,Spring',
   locales: {
     // 键名是该语言所属的子路径
     // 作为特例，默认语言可以使用 '/' 作为其路径。

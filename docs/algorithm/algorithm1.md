@@ -42,9 +42,9 @@
 
 ## KMP算法
 ### 部分匹配值
-在“aba”中，前缀集就是除掉最后一个字符'a'后的子串集合{a,ab}，同理后缀集为除掉最前一个字符a后的子串集合{a,ba}，那么两者最长的重复子串就是a，k=1； 
-在“ababa”中，前缀集是{a,ab,aba,abab}，后缀集是{a,ba,aba,baba}，二者最长重复子串是aba，k=3；   
-在“abcabcdabc”中，前缀集是{a,ab,abc,abca,abcab,abcabc,abcabcd,abcabcda,abcabcdab}，后缀集是{c,bc,abc,dabc,cdabc,bcdabc,abcdabc,cabcdabc,bcabcdabc}，二者最长重复的子串是“abc”,k=3；
+>1.在`aba`中，前缀集就是除掉最后一个字符`a`后的子串集合`{a,ab}`，同理后缀集为除掉最前一个字符`a`后的子串集合`{a,ba}`，那么两者最长的重复子串就是`a`，`k=1`;  
+>2.在`ababa`中，前缀集是`{a,ab,aba,abab}`，后缀集是`{a,ba,aba,baba}`，二者最长重复子串是`aba`，`k=3`；   
+>3.在`abcabcdab`中，前缀集是`{a,ab,abc,abca,abcab,abcabc,abcabcd,abcabcda,abcabcdab}`，后缀集是`{c,bc,abc,dabc,>cdabc,bcdabc,abcdabc,cabcdabc,bcabcdabc}`，二者最长重复的子串是`abc`,`k=3`；
 ### 求子串的部分匹配表
 ```java
 	/**

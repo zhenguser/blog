@@ -2,11 +2,7 @@
     <div v-if="comment">
         <!-- id 将作为查询条件 -->
         <h3></h3>
-        <span :id="page.path" class="leancloud_visitors" :data-flag-title="page.title">
-            <em class="post-meta-item-text">阅读量：</em>
-            <i class="leancloud-visitors-count">1000000</i>
-        </span>
-        <h3>文章评论：</h3>
+        <h3>留言：</h3>
         <div id="vcomments"></div>
     </div>
 </template>
@@ -43,7 +39,7 @@ export default {
                 verify:false, 
                 avatar:'', 
                 meta: ['nick','mail','link'],
-                visitor: true,
+                visitor: false,
                 pageSize: 20,
                 path: window.location.pathname,
                 placeholder: '欢迎留言...' 

@@ -1,38 +1,64 @@
-# 开发 页面1
-“知及之，仁不能守之，虽得之，必失之。知及之，仁能守之，不庄以莅之，则民不敬。知及之，仁能守之，庄以莅之，动之不以礼，未善也。”
-
-初识《传习录》，逐字读，看到讲王阳明名字“守仁”的由来，语出《论语·卫灵公》“知及之，仁不能守之，虽得之，必失之”，不解，查证，找到原文：“知及之，仁不能守之，虽得之，必失之。知及之，仁能守之，不庄以莅之，则民不敬。知及之，仁能守之，庄以莅之，动之不以礼，未善也。”
-
-靠智慧得到了它，不能靠仁德去保持，即使得到了也一定会失去。靠智慧得到，靠仁德保持，不能用庄严的态度去治理，百姓也不会认真（地生活和工作）。靠智慧得到，靠仁德保持，又能用庄严的态度治理，但如果不能用礼法来指挥、动员百姓，还不够好。
-
-孔子讲的是治国平天下的道理，在当下去读，于我凡夫俗子的日常，也是醍醐灌顶般的醒悟。
-
-用智慧去获得，用仁德去保持，用恭敬庄严的态度去对待，动静皆有礼法，短短几句话，似乎能揭示很多求而不得的真相。巧言令色、不择手段地去得到，没有仁德去守护，终不能长久。得到了，也靠仁德去保持，态度轻佻不庄严，也得不到人们的敬重。这一切都做到了，还需要礼法去约束克制，这样才能趋于至善。不管是工作，还是人际关系，生命历程中孜孜不断的追求，内心最终的平和宁静，知、仁、庄、礼都是不变的法则。
-
-一本《传习录》，只“守仁”二字，便肃然起敬。
-
-## 页面1二级标题
-“知及之，仁不能守之，虽得之，必失之。知及之，仁能守之，不庄以莅之，则民不敬。知及之，仁能守之，庄以莅之，动之不以礼，未善也。”
-
-初识《传习录》，逐字读，看到讲王阳明名字“守仁”的由来，语出《论语·卫灵公》“知及之，仁不能守之，虽得之，必失之”，不解，查证，找到原文：“知及之，仁不能守之，虽得之，必失之。知及之，仁能守之，不庄以莅之，则民不敬。知及之，仁能守之，庄以莅之，动之不以礼，未善也。”
-
-靠智慧得到了它，不能靠仁德去保持，即使得到了也一定会失去。靠智慧得到，靠仁德保持，不能用庄严的态度去治理，百姓也不会认真（地生活和工作）。靠智慧得到，靠仁德保持，又能用庄严的态度治理，但如果不能用礼法来指挥、动员百姓，还不够好。
-
-孔子讲的是治国平天下的道理，在当下去读，于我凡夫俗子的日常，也是醍醐灌顶般的醒悟。
-
-用智慧去获得，用仁德去保持，用恭敬庄严的态度去对待，动静皆有礼法，短短几句话，似乎能揭示很多求而不得的真相。巧言令色、不择手段地去得到，没有仁德去守护，终不能长久。得到了，也靠仁德去保持，态度轻佻不庄严，也得不到人们的敬重。这一切都做到了，还需要礼法去约束克制，这样才能趋于至善。不管是工作，还是人际关系，生命历程中孜孜不断的追求，内心最终的平和宁静，知、仁、庄、礼都是不变的法则。
-
-一本《传习录》，只“守仁”二字，便肃然起敬。
-
-### 页面1三级标题
-“知及之，仁不能守之，虽得之，必失之。知及之，仁能守之，不庄以莅之，则民不敬。知及之，仁能守之，庄以莅之，动之不以礼，未善也。”
-
-初识《传习录》，逐字读，看到讲王阳明名字“守仁”的由来，语出《论语·卫灵公》“知及之，仁不能守之，虽得之，必失之”，不解，查证，找到原文：“知及之，仁不能守之，虽得之，必失之。知及之，仁能守之，不庄以莅之，则民不敬。知及之，仁能守之，庄以莅之，动之不以礼，未善也。”
-
-靠智慧得到了它，不能靠仁德去保持，即使得到了也一定会失去。靠智慧得到，靠仁德保持，不能用庄严的态度去治理，百姓也不会认真（地生活和工作）。靠智慧得到，靠仁德保持，又能用庄严的态度治理，但如果不能用礼法来指挥、动员百姓，还不够好。
-
-孔子讲的是治国平天下的道理，在当下去读，于我凡夫俗子的日常，也是醍醐灌顶般的醒悟。
-
-用智慧去获得，用仁德去保持，用恭敬庄严的态度去对待，动静皆有礼法，短短几句话，似乎能揭示很多求而不得的真相。巧言令色、不择手段地去得到，没有仁德去守护，终不能长久。得到了，也靠仁德去保持，态度轻佻不庄严，也得不到人们的敬重。这一切都做到了，还需要礼法去约束克制，这样才能趋于至善。不管是工作，还是人际关系，生命历程中孜孜不断的追求，内心最终的平和宁静，知、仁、庄、礼都是不变的法则。
-
-一本《传习录》，只“守仁”二字，便肃然起敬。
+# Maven镜像
+直接配置阿里云镜像发现并没有什么用，在maven 库的官网上http://maven.apache.org/settings.html，是建议我们这样设置的：
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <localRepository/>
+  <interactiveMode/>
+  <usePluginRegistry/>
+  <offline/>
+  <pluginGroups/>
+  <servers/>
+  <mirrors>
+    <mirror>
+     <id>aliyunmaven</id>
+     <mirrorOf>*</mirrorOf>
+     <name>阿里云公共仓库</name>
+     <url>https://maven.aliyun.com/repository/public</url>
+    </mirror>
+     <mirror>
+     <id>aliyunmaven</id>
+     <mirrorOf>*</mirrorOf>
+     <name>阿里云谷歌仓库</name>
+     <url>https://maven.aliyun.com/repository/google</url>
+    </mirror>
+    <mirror>
+     <id>aliyunmaven</id>
+     <mirrorOf>*</mirrorOf>
+     <name>阿里云阿帕奇仓库</name>
+     <url>https://maven.aliyun.com/repository/apache-snapshots</url>
+    </mirror>
+    <mirror>
+     <id>aliyunmaven</id>
+     <mirrorOf>*</mirrorOf>
+     <name>阿里云spring仓库</name>
+     <url>https://maven.aliyun.com/repository/spring</url>
+    </mirror>
+    <mirror>
+     <id>aliyunmaven</id>
+     <mirrorOf>*</mirrorOf>
+     <name>阿里云spring插件仓库</name>
+     <url>https://maven.aliyun.com/repository/spring-plugin</url>
+    </mirror>
+  </mirrors>
+  <proxies/>
+  <profiles/>
+  <activeProfiles/>
+</settings>
+```
+```xml
+<profile>
+    <id>jdk18</id>
+    <activation>
+        <jdk>1.8</jdk>
+        <activeByDefault>true</activeByDefault>
+    </activation>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+    </properties>
+</profile>
+```
