@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MySQL 联合索引的命中规则 | ALL FOR ONE</title>
+    <meta name="description" content="zhengqi,Java,Spring">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/images/icon01.jpeg">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?xxxx";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    
+    <link rel="preload" href="/assets/css/0.styles.c19e0299.css" as="style"><link rel="preload" href="/assets/js/app.1662ca67.js" as="script"><link rel="preload" href="/assets/js/3.bef2b693.js" as="script"><link rel="preload" href="/assets/js/42.c389813d.js" as="script"><link rel="preload" href="/assets/js/4.b73437c6.js" as="script"><link rel="prefetch" href="/assets/js/1.69163e16.js"><link rel="prefetch" href="/assets/js/10.991e5a5a.js"><link rel="prefetch" href="/assets/js/11.efa42502.js"><link rel="prefetch" href="/assets/js/12.969d7157.js"><link rel="prefetch" href="/assets/js/13.0029625e.js"><link rel="prefetch" href="/assets/js/14.939b485a.js"><link rel="prefetch" href="/assets/js/15.bbeed6fe.js"><link rel="prefetch" href="/assets/js/16.73ee86c5.js"><link rel="prefetch" href="/assets/js/17.5c7a2d4f.js"><link rel="prefetch" href="/assets/js/18.f78397f5.js"><link rel="prefetch" href="/assets/js/19.dcdce965.js"><link rel="prefetch" href="/assets/js/20.3b190664.js"><link rel="prefetch" href="/assets/js/21.dfbef666.js"><link rel="prefetch" href="/assets/js/22.74892e1f.js"><link rel="prefetch" href="/assets/js/23.1c940112.js"><link rel="prefetch" href="/assets/js/24.43f6e55b.js"><link rel="prefetch" href="/assets/js/25.1fd6fef8.js"><link rel="prefetch" href="/assets/js/26.c084db6d.js"><link rel="prefetch" href="/assets/js/27.c95d3b77.js"><link rel="prefetch" href="/assets/js/28.037cb8b9.js"><link rel="prefetch" href="/assets/js/29.d0a475b9.js"><link rel="prefetch" href="/assets/js/30.07c5ca37.js"><link rel="prefetch" href="/assets/js/31.69871ea1.js"><link rel="prefetch" href="/assets/js/32.b1a69258.js"><link rel="prefetch" href="/assets/js/33.28c897b5.js"><link rel="prefetch" href="/assets/js/34.cd1c7c76.js"><link rel="prefetch" href="/assets/js/35.d8f86f1f.js"><link rel="prefetch" href="/assets/js/36.77ce635a.js"><link rel="prefetch" href="/assets/js/37.21719f00.js"><link rel="prefetch" href="/assets/js/38.193d0706.js"><link rel="prefetch" href="/assets/js/39.e698c841.js"><link rel="prefetch" href="/assets/js/40.743a57bc.js"><link rel="prefetch" href="/assets/js/41.ade98a02.js"><link rel="prefetch" href="/assets/js/43.96bb6038.js"><link rel="prefetch" href="/assets/js/44.79c2ea49.js"><link rel="prefetch" href="/assets/js/45.4fdc695e.js"><link rel="prefetch" href="/assets/js/46.c2dde55d.js"><link rel="prefetch" href="/assets/js/47.953a180e.js"><link rel="prefetch" href="/assets/js/48.ef15988a.js"><link rel="prefetch" href="/assets/js/49.a02f3ce7.js"><link rel="prefetch" href="/assets/js/5.3ce096f1.js"><link rel="prefetch" href="/assets/js/50.a2591607.js"><link rel="prefetch" href="/assets/js/6.637b5602.js"><link rel="prefetch" href="/assets/js/7.7093be3e.js"><link rel="prefetch" href="/assets/js/8.ab4c53ca.js"><link rel="prefetch" href="/assets/js/9.e7ce857f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c19e0299.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/icon01.jpeg" alt="ALL FOR ONE" class="logo"> <span class="site-name can-hide">ALL FOR ONE</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/frontend/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/development/" class="nav-link">
+  开发
+</a></div><div class="nav-item"><a href="/more/" class="nav-link router-link-active">
+  更多
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/frontend/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/development/" class="nav-link">
+  开发
+</a></div><div class="nav-item"><a href="/more/" class="nav-link router-link-active">
+  更多
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>更多</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/more/" class="sidebar-link">数据库设计的范式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/more/#数据库设计的范式" class="sidebar-link">数据库设计的范式</a></li></ul></li><li><a href="/more/more1.html" class="active sidebar-link">MySQL 联合索引的命中规则</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/more/more1.html#创建索引" class="sidebar-link">创建索引</a></li><li class="sidebar-sub-header"><a href="/more/more1.html#一级、二级、三级封锁协议" class="sidebar-link">一级、二级、三级封锁协议</a></li></ul></li><li><a href="/more/more2.html" class="sidebar-link">微服务电商项目</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/more/more2.html#一-微信服务" class="sidebar-link">一.微信服务</a></li><li class="sidebar-sub-header"><a href="/more/more2.html#二-会员服务" class="sidebar-link">二.会员服务</a></li><li class="sidebar-sub-header"><a href="/more/more2.html#三-会员定时任务服务" class="sidebar-link">三.会员定时任务服务</a></li><li class="sidebar-sub-header"><a href="/more/more2.html#四-支付服务" class="sidebar-link">四.支付服务</a></li><li class="sidebar-sub-header"><a href="/more/more2.html#积分服务" class="sidebar-link">积分服务</a></li><li class="sidebar-sub-header"><a href="/more/more2.html#秒杀服务" class="sidebar-link">秒杀服务</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mysql-联合索引的命中规则"><a href="#mysql-联合索引的命中规则" class="header-anchor">#</a> MySQL 联合索引的命中规则</h1> <p>联合索引又叫复合索引。对于复合索引:Mysql从左到右的使用索引中的字段，一个查询可以只使用索引中的一部份，但只能是最左侧部分。例如索引是key index (a,b,c). 可以支持a | a,b| a,b,c 3种组合进行查找，但不支持 b,c进行查找 .当最左侧字段是常量引用时，索引就十分有效。</p> <p>两个或更多个列上的索引被称作复合索引。
+利用索引中的附加列，您可以缩小搜索的范围，但使用一个具有两列的索引 不同于使用两个单独的索引。复合索引的结构与电话簿类似，人名由姓和名构成，电话簿首先按姓氏对进行排序，然后按名字对有相同姓氏的人进行排序。如果您知 道姓，电话簿将非常有用；如果您知道姓和名，电话簿则更为有用，但如果您只知道名不姓，电话簿将没有用处。
+所以说创建复合索引时，应该仔细考虑列的顺序。对索引中的所有列执行搜索或仅对前几列执行搜索时，复合索引非常有用；仅对后面的任意列执行搜索时，复合索引则没有用处。</p> <p>当一个表有多条索引可走时,  Mysql  根据查询语句的成本来选择走哪条索引, 联合索引的话, 它往往计算的是第一个字段(最左边那个), 这样往往会走错索引. 如:
+索引Index_1(Create_Time, Category_ID), Index_2(Category_ID)</p> <p>如果每天的数据都特别多, 而且有很多category, 但具体每个category的记录不会很多.</p> <p>当查询SQL条件为select …where create_time ….and category_id=..时, 很可能不走索引Index_1, 而走索引Index_2, 导致查询比较慢.</p> <p>解决办法是将索引字段的顺序调换一下.</p> <h2 id="创建索引"><a href="#创建索引" class="header-anchor">#</a> 创建索引</h2> <p>在执行CREATE TABLE语句时可以创建索引，也可以单独用CREATE INDEX或ALTER TABLE来为表增加索引。</p> <ol><li>ALTER TABLE
+ALTER TABLE用来创建普通索引、UNIQUE索引或PRIMARY KEY索引。</li></ol> <p>ALTER TABLE table_name ADD INDEX index_name (column_list)</p> <p>ALTER TABLE table_name ADD UNIQUE (column_list)</p> <p>ALTER TABLE table_name ADD PRIMARY KEY (column_list)</p> <p>其中table_name是要增加索引的表名，column_list指出对哪些列进行索引，多列时各列之间用逗号分隔。索引名index_name可选，缺省时，MySQL将根据第一个索引列赋一个名称。另外，ALTER TABLE允许在单个语句中更改多个表，因此可以在同时创建多个索引。</p> <ol start="2"><li>CREATE INDEX
+CREATE INDEX可对表增加普通索引或UNIQUE索引。</li></ol> <p>CREATE INDEX index_name ON table_name (column_list)</p> <p>CREATE UNIQUE INDEX index_name ON table_name (column_list)</p> <p>table_name、index_name和column_list具有与ALTER TABLE语句中相同的含义，索引名不可选。另外，不能用CREATE INDEX语句创建PRIMARY KEY索引。</p> <ol start="3"><li>索引类型
+在创建索引时，可以规定索引能否包含重复值。如果不包含，则索引应该创建为PRIMARY KEY或UNIQUE索引。对于单列惟一性索引，这保证单列不包含重复的值。对于多列惟一性索引，保证多个值的组合不重复。</li></ol> <p>PRIMARY KEY索引和UNIQUE索引非常类似。
+事实上，PRIMARY KEY索引仅是一个具有名称PRIMARY的UNIQUE索引。这表示一个表只能包含一个PRIMARY KEY，因为一个表中不可能具有两个同名的索引。</p> <p>下面的SQL语句对students表在sid上添加PRIMARY KEY索引。</p> <p>ALTER TABLE students ADD PRIMARY KEY (sid)</p> <ol start="4"><li>删除索引
+可利用ALTER TABLE或DROP INDEX语句来删除索引。类似于CREATE INDEX语句，DROP INDEX可以在ALTER TABLE内部作为一条语句处理，语法如下。</li></ol> <p>DROP INDEX index_name ON talbe_name</p> <p>ALTER TABLE table_name DROP INDEX index_name</p> <p>ALTER TABLE table_name DROP PRIMARY KEY</p> <p>其中，前两条语句是等价的，删除掉table_name中的索引index_name。</p> <p>第3条语句只在删除PRIMARY KEY索引时使用，因为一个表只可能有一个PRIMARY KEY索引，因此不需要指定索引名。如果没有创建PRIMARY KEY索引，但表具有一个或多个UNIQUE索引，则MySQL将删除第一个UNIQUE索引。</p> <p>如果从表中删除了某列，则索引会受到影响。对于多列组合的索引，如果删除其中的某列，则该列也会从索引中删除。如果删除组成索引的所有列，则整个索引将被删除。</p> <ol start="5"><li>查看索引</li></ol> <p>mysql&gt; show index from tblname;</p> <p>mysql&gt; show keys from tblname;
+　　· Table</p> <p>表的名称。</p> <p>· Non_unique</p> <p>如果索引不能包括重复词，则为0。如果可以，则为1。</p> <p>· Key_name</p> <p>索引的名称。</p> <p>· Seq_in_index</p> <p>索引中的列序列号，从1开始。</p> <p>· Column_name</p> <p>列名称。</p> <p>· Collation</p> <p>列以什么方式存储在索引中。在MySQL中，有值‘A’（升序）或NULL（无分类）。</p> <p>· Cardinality</p> <p>索引中唯一值的数目的估计值。通过运行ANALYZE TABLE或myisamchk -a可以更新。基数根据被存储为整数的统计数据来计数，所以即使对于小型表，该值也没有必要是精确的。基数越大，当进行联合时，MySQL使用该索引的机会就越大。</p> <p>· Sub_part</p> <p>如果列只是被部分地编入索引，则为被编入索引的字符的数目。如果整列被编入索引，则为NULL。</p> <p>· Packed</p> <p>指示关键字如何被压缩。如果没有被压缩，则为NULL。</p> <p>· Null</p> <p>如果列含有NULL，则含有YES。如果没有，则该列含有NO。</p> <p>· Index_type</p> <p>用过的索引方法（BTREE, FULLTEXT, HASH, RTREE）。</p> <p>· Comment</p> <ol start="6"><li>什么情况下使用索引
+表的主关键字</li></ol> <p>自动建立唯一索引</p> <p>如zl_yhjbqk（用户基本情况）中的hbs_bh（户标识编号）</p> <p>表的字段唯一约束</p> <p>ORACLE利用索引来保证数据的完整性</p> <p>如lc_hj（流程环节）中的lc_bh+hj_sx（流程编号+环节顺序）</p> <p>直接条件查询的字段</p> <p>在SQL中用于条件约束的字段</p> <p>如zl_yhjbqk（用户基本情况）中的qc_bh（区册编号）</p> <p>select * from zl_yhjbqk where qc_bh=’&lt;????甼曀???&gt;7001’</p> <p>查询中与其它表关联的字段</p> <p>字段常常建立了外键关系</p> <p>如zl_ydcf（用电成份）中的jldb_bh（计量点表编号）</p> <p>select * from zl_ydcf a,zl_yhdb b where a.jldb_bh=b.jldb_bh and b.jldb_bh=’540100214511’</p> <p>查询中排序的字段</p> <p>排序的字段如果通过索引去访问那将大大提高排序速度</p> <p>select * from zl_yhjbqk order by qc_bh（建立qc_bh索引）</p> <p>select * from zl_yhjbqk where qc_bh=’7001’ order by cb_sx（建立qc_bh+cb_sx索引，注：只是一个索引，其中包括qc_bh和cb_sx字段）</p> <p>查询中统计或分组统计的字段</p> <p>select max(hbs_bh) from zl_yhjbqk</p> <p>select qc_bh,count(*) from zl_yhjbqk group by qc_bh</p> <p>什么情况下应不建或少建索引</p> <p>表记录太少</p> <p>如果一个表只有5条记录，采用索引去访问记录的话，那首先需访问索引表，再通过索引表访问数据表，一般索引表与数据表不在同一个数据块，这种情况下ORACLE至少要往返读取数据块两次。而不用索引的情况下ORACLE会将所有的数据一次读出，处理速度显然会比用索引快。</p> <p>如表zl_sybm（使用部门）一般只有几条记录，除了主关键字外对任何一个字段建索引都不会产生性能优化，实际上如果对这个表进行了统计分析后ORACLE也不会用你建的索引，而是自动执行全表访问。如：</p> <p>select * from zl_sybm where sydw_bh=’5401’（对sydw_bh建立索引不会产生性能优化）</p> <p>经常插入、删除、修改的表</p> <p>对一些经常处理的业务表应在查询允许的情况下尽量减少索引，如zl_yhbm，gc_dfss，gc_dfys，gc_fpdy等业务表。</p> <p>数据重复且分布平均的表字段</p> <p>假如一个表有10万行记录，有一个字段A只有T和F两种值，且每个值的分布概率大约为50%，那么对这种表A字段建索引一般不会提高数据库的查询速度。</p> <p>经常和主字段一块查询但主字段索引值比较多的表字段</p> <p>如gc_dfss（电费实收）表经常按收费序号、户标识编号、抄表日期、电费发生年月、操作 标志来具体查询某一笔收款的情况，如果将所有的字段都建在一个索引里那将会增加数据的修改、插入、删除时间，从实际上分析一笔收款如果按收费序号索引就已 经将记录减少到只有几条，如果再按后面的几个字段索引查询将对性能不产生太大的影响。</p> <p>对千万级MySQL数据库建立索引的事项及提高性能的手段</p> <p>一、注意事项：</p> <p>首先，应当考虑表空间和磁盘空间是否足够。我们知道索引也是一种数据，在建立索引的时候势必也会占用大量表空间。因此在对一大表建立索引的时候首先应当考虑的是空间容量问题。</p> <p>其次，在对建立索引的时候要对表进行加锁，因此应当注意操作在业务空闲的时候进行。</p> <p>二、性能调整方面：</p> <p>首当其冲的考虑因素便是磁盘I/O。物理上，应当尽量把索引与数据分散到不同的磁盘上（不考虑阵列的情况）。逻辑上，数据表空间与索引表空间分开。这是在建索引时应当遵守的基本准则。</p> <p>其次，我们知道，在建立索引的时候要对表进行全表的扫描工作，因此，应当考虑调大初始化参数db_file_multiblock_read_count的值。一般设置为32或更大。</p> <p>再次，建立索引除了要进行全表扫描外同时还要对数据进行大量的排序操作，因此，应当调整排序区的大小。</p> <div class="language- extra-class"><pre><code>9i之前，可以在session级别上加大sort_area_size的大小，比如设置为100m或者更大。
+
+9i以后，如果初始化参数workarea_size_policy的值为TRUE，则排序区从pga_aggregate_target里自动分配获得。
+</code></pre></div><p>最后，建立索引的时候，可以加上nologging选项。以减少在建立索引过程中产生的大量redo，从而提高执行的速度。</p> <p>MySql在建立索引优化时需要注意的问题</p> <p>设计好MySql的索引可以让你的数据库飞起来，大大的提高数据库效率。设计MySql索引的时候有一下几点注意：</p> <p>1，创建索引</p> <p>对于查询占主要的应用来说，索引显得尤为重要。很多时候性能问题很简单的就是因为我们忘了添加索引而造成的，或者说没有添加更为有效的索引导致。如果不加</p> <p>索引的话，那么查找任何哪怕只是一条特定的数据都会进行一次全表扫描，如果一张表的数据量很大而符合条件的结果又很少，那么不加索引会引起致命的性能下降。
+但是也不是什么情况都非得建索引不可，比如性别可能就只有两个值，建索引不仅没什么优势，还会影响到更新速度，这被称为过度索引。</p> <p>2，复合索引</p> <p>比如有一条语句是这样的：select * from users where area=’beijing’ and age=22;</p> <p>如果我们是在area和age上分别创建单个索引的话，由于mysql查询每次只能使用一个索引，所以虽然这样已经相对不做索引时全表扫描提高了很多效</p> <p>率，但是如果在area、age两列上创建复合索引的话将带来更高的效率。如果我们创建了(area, age,salary)的复合索引，那么其实相当于创建了(area,age,salary)、(area,age)、(area)三个索引，这被称为最佳左前缀特性。
+因此我们在创建复合索引时应该将最常用作限制条件的列放在最左边，依次递减。</p> <p>3，索引不会包含有NULL值的列</p> <p>只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有一列含有NULL值，那么这一列对于此复合索引就是无效的。所以我们在数据库设计时不要让字段的默认值为NULL。</p> <p>4，使用短索引</p> <p>对串列进行索引，如果可能应该指定一个前缀长度。例如，如果有一个CHAR(255)的 列，如果在前10 个或20 个字符内，多数值是惟一的，那么就不要对整个列进行索引。短索引不仅可以提高查询速度而且可以节省磁盘空间和I/O操作。</p> <p>5，排序的索引问题</p> <p>mysql查询只使用一个索引，因此如果where子句中已经使用了索引的话，那么order by中的列是不会使用索引的。因此数据库默认排序可以符合要求的情况下不要使用排序操作；尽量不要包含多个列的排序，如果需要最好给这些列创建复合索引。</p> <p>6，like语句操作</p> <p>一般情况下不鼓励使用like操作，如果非使用不可，如何使用也是一个问题。like “%aaa%” 不会使用索引而like “aaa%”可以使用索引。</p> <p>7，不要在列上进行运算</p> <p>select * from users where</p> <p>YEAR(adddate)</p> <p>8，不使用NOT IN和操作
+NOT IN和操作都不会使用索引将进行全表扫描。NOT IN可以NOT EXISTS代替，id3则可使用id&gt;3 or id</p> <h2 id="一级、二级、三级封锁协议"><a href="#一级、二级、三级封锁协议" class="header-anchor">#</a> 一级、二级、三级封锁协议</h2> <p>在运用X锁和S锁对数据对象加锁时，还需要约定一些规则 ，例如何时申请X锁或S锁、持锁时间、何时释放等。称这些规则为封锁协议（Locking Protocol）。对封锁方式规定不同的规则，就形成了各种不同的封锁协议。不同的封锁协议，在不同的程度上为并发操作的正确调度提供一定的保证。</p> <h3 id="一级封锁协议"><a href="#一级封锁协议" class="header-anchor">#</a> 一级封锁协议</h3> <p>一级封锁协议是：事务T在修改数据R之前必须先对其加X锁，直到事务结束才释放。事务结束包括正常结束（COMMIT）和非正常结束   （ROLLBACK）。　<br>
+一级封锁协议可以防止丢失修改，并保证事务T是可恢复的。使用一级封锁协议可以解决丢失修改问题。<br>
+在一级封锁协议中，如果仅仅是读数据不对其进行修改，是不需要加锁的，它不能保证可重复读和不读“脏”数据。</p> <h3 id="二级封锁协议"><a href="#二级封锁协议" class="header-anchor">#</a> 二级封锁协议</h3> <p>二级封锁协议是：一级封锁协议加上事务T在读取数据R之前必须先对其加S锁，读完后方可释放S锁。<br>
+二级封锁协议除防止了丢失修改，还可以进一步防止读“脏”数据。但在二级封锁协议中，由于读完数据后即可释放S锁，所以它不能保证可重复读。</p> <h3 id="三级封锁协议"><a href="#三级封锁协议" class="header-anchor">#</a> 三级封锁协议</h3> <p>三级封锁协议是：一级封锁协议加上事务T在读取数据R之前必须先对其加S锁，直到事务结束才释放。   　　
+三级封锁协议除防止了丢失修改和不读“脏”数据外，还进一步防止了不可重复读。   　
+上述三级协议的主要区别在于什么操作需要申请封锁，以及何时释放。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/zhenguser/blog/edit/master/docs/more/more1.md" target="_blank" rel="noopener noreferrer">编辑文档</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">最近更新时间:</span> <span class="time">2020-3-24 2:02:01</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/more/" class="prev router-link-active">
+        数据库设计的范式
+      </a></span> <span class="next"><a href="/more/more2.html">
+        微服务电商项目
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.1662ca67.js" defer></script><script src="/assets/js/3.bef2b693.js" defer></script><script src="/assets/js/42.c389813d.js" defer></script><script src="/assets/js/4.b73437c6.js" defer></script>
+  </body>
+</html>
